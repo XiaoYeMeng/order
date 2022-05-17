@@ -36,7 +36,7 @@ def get_input_text():
     else:
         dataListaa = get_api(inputTextField.get())
 
-# 實作處理跌代問題 把所有資料完整顯示出來
+# TODO 實作處理跌代問題 把所有資料完整顯示出來
 # 抓取Covid19 API
 def get_api(conname):
     r = requests.get(

@@ -50,11 +50,39 @@ def en_6():
 
 
 def en_7():
-    if int(lb_6['text']) > 0:
+    if int(lb_5['text']) == 0 and int(lb_4['text']) > 0 and int(lb_6['text']) == 0:
+        lb_4['text'] = int(lb_4['text']) - 1
+        lb_5['text'] = 59
+        lb_6['text'] = 59
+    elif int(lb_6['text']) == 0 and int(lb_5['text']) > 0:
+        lb_5['text'] = int(lb_5['text']) - 1
+        lb_6['text'] = 59
+    elif int(lb_6['text']) > 0:
         lb_6['text'] = int(lb_6['text']) - 1
     else:
         lb_7['text'] = 'times up'
     window.after(1000, en_7)
+
+
+
+def en_8():
+    bt_1['state'] = tk.DISABLED
+    bt_2['state'] = tk.DISABLED
+    bt_3['state'] = tk.DISABLED
+    bt_4['state'] = tk.DISABLED
+    bt_5['state'] = tk.DISABLED
+    bt_6['state'] = tk.DISABLED
+    bt_7['state'] = tk.DISABLED
+
+
+def en_9():
+    bt_1['state'] = tk.NORMAL
+    bt_2['state'] = tk.NORMAL
+    bt_3['state'] = tk.NORMAL
+    bt_4['state'] = tk.NORMAL
+    bt_5['state'] = tk.NORMAL
+    bt_6['state'] = tk.NORMAL
+    bt_7['state'] = tk.NORMAL
 
 
 '''
@@ -110,10 +138,10 @@ bt_5.place(width=24, x=690, y=160)
 bt_6 = tk.Button(window, text='-', font=('微軟正黑體', 9), command=en_6)
 bt_6.place(width=24, x=690, y=190)
 # start
-bt_7 = tk.Button(window, width=6, text='start', font=('微軟正黑體', 36), command=en_7)
+bt_7 = tk.Button(window, width=6, text='start', font=('微軟正黑體', 36), command=lambda: [en_7(), en_8()])
 bt_7.place(width=200, x=300, y=300)
 # pause
-bt_8 = tk.Button(window, width=6, text='pause', font=('微軟正黑體', 36))
+bt_8 = tk.Button(window, width=6, text='pause', font=('微軟正黑體', 36), command=en_9)
 bt_8.place(width=200, x=510, y=300)
 
 

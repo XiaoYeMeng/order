@@ -6,11 +6,7 @@ import pygame
 
 
 def en_1():
-    if et_1.get() <= '0':
-        tk.messagebox.showerror('error', 'Enter a value.')
-    elif et_2.get() <= '0':
-        tk.messagebox.showerror('error', 'Enter a value.')
-    elif et_3.get() <= '0':
+    if et_1.get() <= '0' or et_2.get() <= '0' or et_3.get() <= '0' :
         tk.messagebox.showerror('error', 'Enter a value.')
     else:
         count = '(' + et_1.get() + '+' + et_2.get() + ')' + ' * ' + et_3.get() + ' / 2' + ' = '

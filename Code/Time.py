@@ -64,7 +64,6 @@ def en_7():
     window.after(1000, en_7)
 
 
-
 def en_8():
     bt_1['state'] = tk.DISABLED
     bt_2['state'] = tk.DISABLED
@@ -143,6 +142,5 @@ bt_7.place(width=200, x=300, y=300)
 # pause
 bt_8 = tk.Button(window, width=6, text='pause', font=('微軟正黑體', 36), command=en_9)
 bt_8.place(width=200, x=510, y=300)
-
 
 window.mainloop()

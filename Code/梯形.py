@@ -4,9 +4,9 @@ import tkinter as tk
 
 #公式
 print ('計算梯形面積')
-top = input ('輸入上底')
-bot = input ('輸入下底')
-high = input ('輸入高')
+top = input('輸入上底')
+bot = input('輸入下底')
+high = input('輸入高')
 ans = (float(top) + float(bot)) * float(high) / 2
 print(type(ans))
 

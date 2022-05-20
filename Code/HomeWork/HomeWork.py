@@ -6,7 +6,7 @@ import pygame
 
 
 def en_1():
-    if et_1.get() <= '0' or et_2.get() <= '0' or et_3.get() <= '0' :
+    if et_1.get() <= '0' or et_2.get() <= '0' or et_3.get() <= '0':
         tk.messagebox.showerror('error', 'Enter a value.')
     else:
         count = '(' + et_1.get() + '+' + et_2.get() + ')' + ' * ' + et_3.get() + ' / 2' + ' = '
@@ -102,6 +102,5 @@ bt_2.place(x=420, y=270)
 pygame.mixer.init()
 pygame.mixer.music.load('./mp3/NextToYou.mp3')
 pygame.mixer.music.play(-1)
-
 
 window.mainloop()

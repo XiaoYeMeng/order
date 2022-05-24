@@ -49,7 +49,7 @@ window.geometry('1024x960')
 Image
 """
 # 圖片路徑
-img_1 = ImageTk.PhotoImage(Image.open('./image/ITACHI_1_960x540.jpg'))
+img_1 = ImageTk.PhotoImage(Image.open('./image/ITACHI_1_480x270.jpg'))
 img_2 = ImageTk.PhotoImage(Image.open('./image/clear.jpg'))
 
 """

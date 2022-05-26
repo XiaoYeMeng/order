@@ -45,7 +45,7 @@ GUI
 '''
 window = tk.Tk()
 window.title('trapezoid')
-window.geometry('1280x600')
+window.geometry('1000x600')
 '''
 Image
 '''
@@ -75,7 +75,7 @@ lb_ans.place(x=0, y=400)
 lb_answer = tk.Label(window, text='(top+bot) * height / 2', font=('Time New Roman', 36))
 lb_answer.place(x=200, y=400)
 lb_img = tk.Label(window)
-lb_img.place(x=700, y=100)
+lb_img.place(x=500, y=100)
 
 '''
 Entry

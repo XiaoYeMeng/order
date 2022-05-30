@@ -1,5 +1,4 @@
 import tkinter as tk
-import time
 
 
 def hour_up():
@@ -14,32 +13,60 @@ def hour_down():
 def min_up():
     if lb_min['text'] < 59:
         lb_min['text'] += 1
+    else:
+        lb_min['text'] -= 59
 
 
 def min_down():
     if lb_min['text'] > 0:
         lb_min['text'] -= 1
+    else:
+        lb_min['text'] += 59
 
 
 def sec_up():
     if lb_sec['text'] < 59:
         lb_sec['text'] += 1
+    else:
+        lb_sec['text'] -= 59
 
 
 def sec_down():
     if lb_sec['text'] > 0:
         lb_sec['text'] -= 1
+    else:
+        lb_sec['text'] += 59
 
-# todo
+
 def start():
-    while lb_sec['text'] > 0:
+    if lb_sec['text'] > 0:
         lb_sec['text'] -= 1
+        window.after(1000, start)
+        print('sec')
+    elif lb_sec['text'] == 0 and lb_min['text'] > 0:
+        lb_min['text'] -= 1
+        lb_sec['text'] += 59
+        window.after(1000, start)
+        print('min')
+    elif lb_sec['text'] == 0 and lb_min['text'] == 0 and lb_hour['text'] > 0:
+        lb_hour['text'] -= 1
+        lb_min['text'] += 59
+        lb_sec['text'] += 59
+        window.after(1000, start)
+        print('hour')
+    else:
+        lb_end['text'] = 'Time is up.'
+
+
+# todo pause and lock
+# def pause():
 
 
 def reset():
     lb_hour['text'] = 0
     lb_min['text'] = 0
     lb_sec['text'] = 0
+    lb_end['text'] = ''
 
 
 '''
@@ -64,7 +91,8 @@ lb_min_colon = tk.Label(window, text=':', font=('Time new roman', 36))
 lb_min_colon.place(x=450, y=95)
 lb_sec = tk.Label(window, text=int(0), font=('Time new roman', 36))
 lb_sec.place(x=500, y=100)
-
+lb_end = tk.Label(window, text='', font=('Time new roman', 36))
+lb_end.place(x=265, y=300)
 
 '''
 Button

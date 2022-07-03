@@ -1,17 +1,29 @@
 import tkinter as tk
-import pydocx
+from docx import Document
+
+
+def sign():
+    docx = Document()
+    docx.add_paragraph(et_cn.get(), style='List Bullet')
+    docx.add_paragraph(et_en.get(), style='List Bullet')
+    docx.add_paragraph(et_mobile.get(), style='List Bullet')
+    docx.add_paragraph(et_tel.get(), style='List Bullet')
+    docx.add_paragraph(et_mail.get(), style='List Bullet')
+    docx.save('signtest.docx')
+
+    print(et_cn.get())
 
 '''
 GUI
 '''
 window = tk.Tk()
-window.title('title')
+window.title('sign')
 window.geometry('800x600')
 
 '''
 Label
 '''
-lb_title = tk.Label(window, text='title', font=('Time new roman', 54))
+lb_title = tk.Label(window, text='sign', font=('Time new roman', 54))
 lb_title.pack()
 lb_cn = tk.Label(window, text='Name(ZH)', font=('Time new roman', 36))
 lb_cn.place(x=0, y=100)
@@ -38,16 +50,12 @@ et_tel.place(x=200, y=400)
 et_mail = tk.Entry(window, font=('Time new roman', 36))
 et_mail.place(x=200, y=500)
 
-var = tk.StringVar()
-var.set('font')
-test = tk.OptionMenu(window, var,  'Arial', 'Time new roman', '標楷體')
-test.place(x=50, y=50)
 
 '''
-Docx
+Button
 '''
-
-
+bt_sign = tk.Button(window, text='sign', command=sign, font=('Time new roman', 36))
+bt_sign.place(x=0, y=550)
 
 
 window.mainloop()

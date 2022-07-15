@@ -52,5 +52,5 @@ Button
 '''
 bt_send = tk.Button(window, text='傳送', width=9, command=send, font=('Time new roman', 18))
 bt_send.place(x=80, y=300)
-
+#
 window.mainloop()

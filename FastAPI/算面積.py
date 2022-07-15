@@ -11,7 +11,7 @@ rectangle_long = 'rectangle?long='
 rectangle_width = '&width='
 triangle_bot = 'triangle?bot='
 triangle_height = '&height='
-#
+
 
 def count_circle():
     # 計算圓形面積
